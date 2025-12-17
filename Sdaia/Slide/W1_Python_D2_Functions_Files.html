@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="malfadly@sdaia.gov.sa">
+<meta name="dcterms.date" content="2025-12-15">
+
+<title>AI Pros | W1 D2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="W1_Python_D2_Functions_Files_files/libs/clipboard/clipboard.min.js"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/popper.min.js"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="W1_Python_D2_Functions_Files_files/libs/quarto-html/anchor.min.js"></script>
+<link href="W1_Python_D2_Functions_Files_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="W1_Python_D2_Functions_Files_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="W1_Python_D2_Functions_Files_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="W1_Python_D2_Functions_Files_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="W1_Python_D2_Functions_Files_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python &amp; Tooling</h1>
+<p class="subtitle lead">AI Professionals Bootcamp | Week 1</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="day-2-functions-files-better-profiling" class="level1 page-columns page-full">
+<h1>Day 2: Functions + Files + Better Profiling</h1>
+<p><strong>Goal:</strong> Turn yesterday’s script into <strong>clean functions</strong> and produce a <strong>richer profiling report</strong> for any CSV.</p>
+<div class="muted">
+<p>Bootcamp • SDAIA Academy</p>
+</div>
+<hr>
+<section id="todays-flow" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="todays-flow">Today’s Flow</h2>
+<ul>
+<li><strong>Session 1 (60m):</strong> Procedural programming with functions</li>
+<li><em>Asr Prayer (20m)</em></li>
+<li><strong>Session 2 (60m):</strong> Strings + formatting → generate Markdown reports</li>
+<li><em>Maghrib Prayer (20m)</em></li>
+<li><strong>Session 3 (60m):</strong> Files + <code>pathlib</code> + <code>csv</code> + <code>json</code></li>
+<li><em>Isha Prayer (20m)</em></li>
+<li><strong>Hands-on (120m):</strong> CSV Profiler — Part 2 (type inference + numeric stats)</li>
+</ul>
+<hr>
+</section>
+<section id="learning-objectives" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of today, you can:</p>
+<ul>
+<li>Write <strong>reusable functions</strong> (args, defaults, <code>*args</code>, <code>**kwargs</code>, keyword-only)</li>
+<li>Use built-ins like <code>enumerate</code>, <code>zip</code>, <code>sorted</code>, <code>any</code>, <code>all</code></li>
+<li>Generate clean <strong>Markdown</strong> with f-strings + <code>join()</code></li>
+<li>Use <code>pathlib.Path</code> for safe paths</li>
+<li>Read CSVs with <code>csv.DictReader</code> and write JSON with <code>json.dumps()</code></li>
+<li>Upgrade your profiler: <strong>type inference + stats</strong></li>
+</ul>
+<hr>
+</section>
+<section id="genai-policy-reminder-week-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="genai-policy-reminder-week-1">GenAI policy reminder (Week 1)</h2>
+<ul>
+<li>✅ Allowed: asking <strong>clarifying questions</strong> (syntax, errors, concepts)</li>
+<li>❌ Not allowed: generating code, solutions, reports, or summaries</li>
+</ul>
+<p>If you are stuck: 1. Re-read your own code 2. Use docs (<code>help()</code>, official docs) 3. Ask a human (TA / instructor)</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>This week is about <em>building your own skills</em>, not outsourcing them.</p>
+</div></div><hr>
+</section>
+<section id="warm-up-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up-5-minutes">Warm-up (5 minutes)</h2>
+<p>Open your Day 1 project and run it.</p>
+<p><strong>Target command (Unix/macOS):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/bootcamp/csv-profiler</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Target command (Windows PowerShell):</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cd</span> <span class="va">$HOME</span>\bootcamp\csv-profiler</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>uv run python main<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Checkpoint:</strong> <code>outputs/report.json</code> and <code>outputs/report.md</code> are created.</p>
+<hr>
+</section>
+<section id="if-imports-fail-fix-your-src-imports-for-now" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="if-imports-fail-fix-your-src-imports-for-now">If imports fail: fix your <code>src/</code> imports (for now)</h2>
+<p>If you see <code>ModuleNotFoundError: No module named 'csv_profiler'</code>:</p>
+<p><strong>Option A (recommended today): run with <code>PYTHONPATH=src</code></strong></p>
+<ul>
+<li>Unix/macOS:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">PYTHONPATH</span><span class="op">=</span>src <span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Windows PowerShell:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">PYTHONPATH</span><span class="op">=</span><span class="st">"src"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>uv run python main<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ll formalize packaging later. Today we use this simple approach to keep moving.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="week-project-progress" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="week-project-progress">Week project progress</h2>
+<p>You already have (Day 1):</p>
+<ul>
+<li>Read a CSV into <code>rows: list[dict[str, str]]</code></li>
+<li>Compute a <strong>basic</strong> report (rows/columns + missing count)</li>
+<li>Write <code>report.json</code> and <code>report.md</code></li>
+</ul>
+<p>Today you will add:</p>
+<ul>
+<li>Column <strong>type inference</strong>: <code>number</code> vs <code>text</code></li>
+<li>Numeric stats: <code>min</code>, <code>max</code>, <code>mean</code>, <code>unique</code></li>
+<li>Cleaner Markdown structure (tables + sections)</li>
+</ul>
+</section>
+</section>
+<section id="session-1" class="level1 page-columns page-full">
+<h1>Session 1</h1>
+<section id="functions-your-unit-of-thinking" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="functions-your-unit-of-thinking">Functions: your unit of thinking</h2>
+<div class="muted">
+<p>3:00pm–4:00pm</p>
+</div>
+<hr>
+</section>
+<section id="session-1-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-1-objectives">Session 1 objectives</h2>
+<ul>
+<li>Explain <strong>why</strong> we refactor into functions</li>
+<li>Write functions with clear inputs/outputs</li>
+<li>Use different parameter styles safely</li>
+<li>Use built-ins that make your code shorter and clearer</li>
+</ul>
+<hr>
+</section>
+<section id="why-functions-in-one-sentence" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="why-functions-in-one-sentence">Why functions? (in one sentence)</h2>
+<p>A function lets you <strong>name a piece of logic</strong> so you can:</p>
+<ul>
+<li>reuse it</li>
+<li>test it</li>
+<li>read it later without re-thinking it</li>
+<li>change it in one place</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>In this project, “profiling” becomes a set of small functions you can compose.</p>
+</div></div><hr>
+</section>
+<section id="anatomy-of-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-function">Anatomy of a function</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a friendly greeting."""</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Hello </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>def</code> creates the function</li>
+<li>parameters go inside <code>(...)</code></li>
+<li>the return type after <code>-&gt;</code> is a <strong>hint</strong> (not enforced automatically)</li>
+<li>docstring describes behavior</li>
+</ul>
+<hr>
+</section>
+<section id="side-effects-vs-return-values" class="level2">
+<h2 class="anchored" data-anchor-id="side-effects-vs-return-values">Side effects vs return values</h2>
+<p><strong>Pure-ish</strong> (good for profiling):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mean(values: <span class="bu">list</span>[<span class="bu">float</span>]) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(values) <span class="op">/</span> <span class="bu">len</span>(values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Side effect</strong> (still useful, but keep controlled):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_text(path: <span class="bu">str</span>, text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">open</span>(path, <span class="st">"w"</span>).write(text)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Try to keep <em>profiling logic</em> mostly “return values”. Keep <em>I/O</em> (reading/writing files) in a small number of places.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="parameter-types-most-common" class="level2">
+<h2 class="anchored" data-anchor-id="parameter-types-most-common">Parameter types (most common)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a: <span class="bu">float</span>, b: <span class="bu">float</span> <span class="op">=</span> <span class="fl">1.0</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Calls:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>add(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>add(<span class="dv">7</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>add(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>add(b<span class="op">=</span><span class="dv">2</span>, a<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="quick-check" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check">Quick Check</h2>
+<p>What is printed?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">10</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">10</span>, <span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>. . .</p>
+<p><strong>Answer:</strong> <code>11</code> then <code>15</code></p>
+<hr>
+</section>
+<section id="args-many-positional-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="args-many-positional-arguments"><code>*args</code>: “many positional arguments”</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> accumulate(<span class="op">*</span>numbers: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> numbers:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> n</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>accumulate(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)     <span class="co"># 6.0</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>accumulate(<span class="dv">5</span>)           <span class="co"># 5.0</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>accumulate()            <span class="co"># 0.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="kwargs-many-keyword-arguments" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="kwargs-many-keyword-arguments"><code>**kwargs</code>: “many keyword arguments”</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> double(<span class="op">**</span>values: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">float</span>]:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {k: v <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> k, v <span class="kw">in</span> values.items()}</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>double(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>)  <span class="co"># {"a": 2, "b": 4}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>In this week, we’ll mostly use <code>**kwargs</code> for optional config later.</p>
+</div></div><hr>
+</section>
+<section id="positional-only-and-keyword-only-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="positional-only-and-keyword-only-parameters">Positional-only and keyword-only parameters</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a: positional-only</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># b: positional-or-keyword</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># c: keyword-only</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, <span class="op">/</span>, b, <span class="op">*</span>, c):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a, b, c)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">1</span>, <span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why care?</p>
+<ul>
+<li>keyword-only parameters make call sites <strong>more readable</strong></li>
+<li>positional-only can protect APIs from accidental misuse</li>
+</ul>
+<hr>
+</section>
+<section id="common-built-in-functions-youll-use-today" class="level2">
+<h2 class="anchored" data-anchor-id="common-built-in-functions-youll-use-today">Common built-in functions you’ll use today</h2>
+<ul>
+<li>Sequence math: <code>len</code>, <code>sum</code>, <code>min</code>, <code>max</code>, <code>all</code>, <code>any</code></li>
+<li>Sequence helpers: <code>sorted</code>, <code>reversed</code>, <code>enumerate</code>, <code>zip</code></li>
+<li>Iteration: <code>range</code>, <code>iter</code>, <code>next</code></li>
+</ul>
+<hr>
+</section>
+<section id="enumerate-index-value" class="level2">
+<h2 class="anchored" data-anchor-id="enumerate-index-value"><code>enumerate</code>: index + value</h2>
+<p>Instead of:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, line)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(lines):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, line)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="zip-walk-multiple-lists-together" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="zip-walk-multiple-lists-together"><code>zip</code>: walk multiple lists together</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">21</span>, <span class="dv">19</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, age <span class="kw">in</span> <span class="bu">zip</span>(names, ages):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>In the report, <code>zip()</code> can pair column names with stats.</p>
+</div></div><hr>
+</section>
+<section id="sorted-keep-original-list-unchanged" class="level2">
+<h2 class="anchored" data-anchor-id="sorted-keep-original-list-unchanged"><code>sorted</code>: keep original list unchanged</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>(values))   <span class="co"># [1, 2, 3]</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values)           <span class="co"># [3, 1, 2]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Also useful with a key:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(words, key<span class="op">=</span><span class="bu">len</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="mapfilter-vs-comprehensions" class="level2">
+<h2 class="anchored" data-anchor-id="mapfilter-vs-comprehensions">Map/filter vs comprehensions</h2>
+<p><strong>These work:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But for readability, prefer:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>[x <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>] <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="mini-exercise-1-5-minutes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mini-exercise-1-5-minutes">Mini-exercise 1 (5 minutes)</h2>
+<p>Write a function:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_missing(value: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""True for empty / null-ish CSV values."""</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Treat these as missing (case-insensitive):</p>
+<ul>
+<li><code>""</code></li>
+<li><code>"na"</code>, <code>"n/a"</code></li>
+<li><code>"null"</code>, <code>"none"</code>, <code>"nan"</code></li>
+<li>whitespace-only strings</li>
+</ul>
+<p><strong>Checkpoint:</strong> <code>is_missing(" NA ")</code> is <code>True</code>.</p>
+<hr>
+</section>
+<section id="solution-is_missing" class="level2">
+<h2 class="anchored" data-anchor-id="solution-is_missing">Solution — <code>is_missing</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>MISSING <span class="op">=</span> {<span class="st">""</span>, <span class="st">"na"</span>, <span class="st">"n/a"</span>, <span class="st">"null"</span>, <span class="st">"none"</span>, <span class="st">"nan"</span>}</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_missing(value: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> value <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    cleaned <span class="op">=</span> value.strip().casefold()</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cleaned <span class="kw">in</span> MISSING</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>casefold()</code> (stronger than <code>lower()</code>) for case-insensitive checks.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="mini-exercise-2-6-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mini-exercise-2-6-minutes">Mini-exercise 2 (6 minutes)</h2>
+<p>Write a safe parser:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> try_float(value: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span>:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return float(value) or None if it fails."""</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Checkpoint:</strong> <code>try_float("3.14")</code> → <code>3.14</code>, <code>try_float("abc")</code> → <code>None</code></p>
+<hr>
+</section>
+<section id="solution-try_float" class="level2">
+<h2 class="anchored" data-anchor-id="solution-try_float">Solution — <code>try_float</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> try_float(value: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span>:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">float</span>(value)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="type-inference-simple-rule" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="type-inference-simple-rule">Type inference (simple rule)</h2>
+<p>For a list of strings:</p>
+<ul>
+<li>ignore missing values</li>
+<li>if <strong>every remaining</strong> value parses as float → <code>number</code></li>
+<li>else → <code>text</code></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>This is a safe baseline. Later we can add a “mostly numeric” threshold.</p>
+</div></div><hr>
+</section>
+<section id="example-infer-type" class="level2">
+<h2 class="anchored" data-anchor-id="example-infer-type">Example: infer type</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> infer_type(values: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    usable <span class="op">=</span> [v <span class="cf">for</span> v <span class="kw">in</span> values <span class="cf">if</span> <span class="kw">not</span> is_missing(v)]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> usable:</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"text"</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> usable:</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> try_float(v) <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"text"</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"number"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="quick-check-1" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-1">Quick Check</h2>
+<p>If a column has values: <code>["1", "2", "3", "x"]</code></p>
+<ul>
+<li>With the simple rule, is it <code>number</code> or <code>text</code>?</li>
+</ul>
+<p>. . .</p>
+<p><strong>Answer:</strong> <code>text</code> (because <code>"x"</code> is not numeric)</p>
+<hr>
+</section>
+<section id="advanced-features-you-saw-them-in-the-reference" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="advanced-features-you-saw-them-in-the-reference">Advanced features (you saw them in the reference)</h2>
+<p>You will see these patterns later, but you don’t need them for today’s assignment:</p>
+<ul>
+<li>recursion</li>
+<li>closures + <code>nonlocal</code></li>
+<li>generators (<code>yield</code>)</li>
+<li>decorators (<code>@something</code>)</li>
+<li><code>global</code> (usually avoid)</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you don’t need a “fancy tool”, don’t use it yet. Write the simplest working code.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="recursion-rare-but-you-should-recognize-it" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="recursion-rare-but-you-should-recognize-it">Recursion (rare, but you should recognize it)</h2>
+<p>A function that calls itself needs:</p>
+<ul>
+<li>a <strong>base case</strong> (stop condition)</li>
+<li>a <strong>step</strong> that moves toward the base case</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_down(n: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    count_down(n <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>In data work, recursion is uncommon. Loops are usually simpler.</p>
+</div></div><hr>
+</section>
+<section id="closures-nonlocal-state-without-globals" class="level2">
+<h2 class="anchored" data-anchor-id="closures-nonlocal-state-without-globals">Closures + <code>nonlocal</code> (state without globals)</h2>
+<p>A nested function can “remember” variables from the outer function.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_counter():</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> inc():</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">nonlocal</span> i</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> i</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> inc</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> make_counter()</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>c()  <span class="co"># 1</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>c()  <span class="co"># 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="decorators-wrapping-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="decorators-wrapping-a-function">Decorators (wrapping a function)</h2>
+<p>A decorator takes a function and returns a new function.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> logged(fn):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Calling:"</span>, fn.<span class="va">__name__</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fn(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> wrapper</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="at">@logged</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="global-exists-but-avoid-it" class="level2">
+<h2 class="anchored" data-anchor-id="global-exists-but-avoid-it"><code>global</code> (exists, but avoid it)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f():</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> x</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why avoid?</p>
+<ul>
+<li>makes bugs harder to trace</li>
+<li>breaks testability</li>
+</ul>
+<hr>
+</section>
+<section id="common-pitfall-mutable-default-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="common-pitfall-mutable-default-arguments">Common pitfall: mutable default arguments</h2>
+<p>Bad:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_item(x, items<span class="op">=</span>[]):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    items.append(x)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> items</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Better:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_item(x, items<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> items <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        items <span class="op">=</span> []</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    items.append(x)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> items</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="optional-generators-in-one-slide" class="level2">
+<h2 class="anchored" data-anchor-id="optional-generators-in-one-slide">(Optional) Generators in one slide</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> counter():</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> <span class="dv">1</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> <span class="dv">2</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> <span class="dv">3</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> counter():</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why mention it?</p>
+<ul>
+<li>generators let you process data <strong>without holding everything in memory</strong></li>
+<li>we will keep today’s CSV small → lists are fine</li>
+</ul>
+<hr>
+</section>
+<section id="recap-session-1" class="level2">
+<h2 class="anchored" data-anchor-id="recap-session-1">Recap (Session 1)</h2>
+<ul>
+<li>Functions make your code reusable and readable</li>
+<li>Learn parameter styles (<code>*args</code>, <code>**kwargs</code>, keyword-only)</li>
+<li>Use built-ins (<code>enumerate</code>, <code>zip</code>, <code>sorted</code>) to write less code</li>
+<li>Implement core helpers: <code>is_missing</code>, <code>try_float</code>, <code>infer_type</code></li>
+</ul>
+</section>
+</section>
+<section id="asr-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Asr break</h1>
+<section id="minutes" class="level2">
+<h2 class="anchored" data-anchor-id="minutes">20 minutes</h2>
+<p><strong>When you return:</strong> open your project folder and keep it ready.</p>
+</section>
+</section>
+<section id="session-2" class="level1">
+<h1>Session 2</h1>
+<section id="strings-markdown-reports" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="strings-markdown-reports">Strings → Markdown reports</h2>
+<div class="muted">
+<p>4:20pm–5:20pm</p>
+</div>
+<hr>
+</section>
+<section id="session-2-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-2-objectives">Session 2 objectives</h2>
+<ul>
+<li>Use f-strings + format specs for readable numbers</li>
+<li>Build Markdown using <strong>lists of lines + join</strong></li>
+<li>Produce a report that a human can skim in 30 seconds</li>
+</ul>
+<hr>
+</section>
+<section id="markdown-is-just-text" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-is-just-text">Markdown is just text</h2>
+<p>Your strategy:</p>
+<ol type="1">
+<li>Build <code>lines: list[str]</code></li>
+<li><code>text = "\n".join(lines) + "\n"</code></li>
+<li>Write to a file</li>
+</ol>
+<p>This avoids painful string concatenation.</p>
+<hr>
+</section>
+<section id="f-strings-readable-and-powerful" class="level2">
+<h2 class="anchored" data-anchor-id="f-strings-readable-and-powerful">f-strings: readable and powerful</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> <span class="dv">1234567</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>missing_pct <span class="op">=</span> <span class="fl">0.03456</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Rows: </span><span class="sc">{</span>rows<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Missing: </span><span class="sc">{</span>missing_pct<span class="sc">:.1%}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Example output:</p>
+<ul>
+<li><code>Rows: 1,234,567</code></li>
+<li><code>Missing: 3.5%</code></li>
+</ul>
+<hr>
+</section>
+<section id="format-specs-youll-actually-use" class="level2">
+<h2 class="anchored" data-anchor-id="format-specs-youll-actually-use">Format specs you’ll actually use</h2>
+<ul>
+<li><code>:,</code> → thousands separators</li>
+<li><code>.2f</code> → 2 decimals</li>
+<li><code>.1%</code> → percent with 1 decimal</li>
+<li><code>&gt;10</code> / <code>&lt;10</code> → align width</li>
+</ul>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>value<span class="sc">:&gt;8.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="building-a-section-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="building-a-section-pattern">Building a section (pattern)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> []</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>lines.append(<span class="st">"# CSV Profiling Report"</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>lines.append(<span class="st">""</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>lines.append(<span class="st">"## Summary"</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>lines.append(<span class="ss">f"- Rows: </span><span class="sc">{</span>n_rows<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(lines) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="mini-exercise-3-6-minutes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="mini-exercise-3-6-minutes">Mini-exercise 3 (6 minutes)</h2>
+<p>Create a function that returns a markdown header block:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_header(source: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return lines for the top of the report."""</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Must include:</p>
+<ul>
+<li>title line <code># CSV Profiling Report</code></li>
+<li>source file name</li>
+<li>generated time (<code>datetime.now().isoformat(timespec="seconds")</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="solution-md_header" class="level2">
+<h2 class="anchored" data-anchor-id="solution-md_header">Solution — <code>md_header</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_header(source: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> datetime.now().isoformat(timespec<span class="op">=</span><span class="st">"seconds"</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"# CSV Profiling Report"</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">""</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"- **Source:** `</span><span class="sc">{</span>source<span class="sc">}</span><span class="ss">`"</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"- **Generated:** `</span><span class="sc">{</span>ts<span class="sc">}</span><span class="ss">`"</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">""</span>,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="markdown-tables-quick-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="markdown-tables-quick-pattern">Markdown tables (quick pattern)</h2>
+<pre class="text"><code>| Column | Type | Missing | Unique |
+|---|---:|---:|---:|
+| age | number | 0 (0.0%) | 12 |</code></pre>
+<p>Rules:</p>
+<ul>
+<li>the second line is the “separator”</li>
+<li>align numeric columns with <code>---:</code> (optional but nice)</li>
+</ul>
+<hr>
+</section>
+<section id="mini-exercise-4-8-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mini-exercise-4-8-minutes">Mini-exercise 4 (8 minutes)</h2>
+<p>Write a function to render the table header:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_table_header() <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It should return:</p>
+<ul>
+<li>header row</li>
+<li>separator row</li>
+</ul>
+<hr>
+</section>
+<section id="solution-md_table_header" class="level2">
+<h2 class="anchored" data-anchor-id="solution-md_table_header">Solution — <code>md_table_header</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_table_header() <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"| Column | Type | Missing | Unique |"</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"|---|---:|---:|---:|"</span>,</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="rendering-one-row-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="rendering-one-row-pattern">Rendering one row (pattern)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_col_row(name: <span class="bu">str</span>, typ: <span class="bu">str</span>, missing: <span class="bu">int</span>, missing_pct: <span class="bu">float</span>, unique: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"| `</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">` | </span><span class="sc">{</span>typ<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>missing_pct<span class="sc">:.1%}</span><span class="ss">) | </span><span class="sc">{</span>unique<span class="sc">}</span><span class="ss"> |"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="mini-exercise-5-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mini-exercise-5-7-minutes">Mini-exercise 5 (7 minutes)</h2>
+<p>Write:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_bullets(items: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Turn ['a','b'] into ['- a','- b']"""</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="solution-md_bullets" class="level2">
+<h2 class="anchored" data-anchor-id="solution-md_bullets">Solution — <code>md_bullets</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> md_bullets(items: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="ss">f"- </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> items]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="common-string-cleaning-moves" class="level2">
+<h2 class="anchored" data-anchor-id="common-string-cleaning-moves">Common string “cleaning” moves</h2>
+<p>When working with CSVs:</p>
+<ul>
+<li><code>strip()</code> to remove whitespace</li>
+<li><code>casefold()</code> for robust lowercasing</li>
+<li><code>replace()</code> to normalize text</li>
+<li><code>split()</code> to break things apart</li>
+<li><code>join()</code> to assemble output</li>
+</ul>
+<hr>
+</section>
+<section id="quick-check-2" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-2">Quick Check</h2>
+<p>What is the output?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"  NA  "</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s.strip().casefold())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>. . .</p>
+<p><strong>Answer:</strong> <code>na</code></p>
+<hr>
+</section>
+<section id="recap-session-2" class="level2">
+<h2 class="anchored" data-anchor-id="recap-session-2">Recap (Session 2)</h2>
+<ul>
+<li>Build Markdown using <code>lines</code> + <code>"\n".join(lines)</code></li>
+<li>Use f-string format specs for readable numbers</li>
+<li>Use small rendering helpers (<code>md_header</code>, <code>md_table_header</code>, <code>md_col_row</code>)</li>
+</ul>
+</section>
+</section>
+<section id="maghrib-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Maghrib break</h1>
+<section id="minutes-1" class="level2">
+<h2 class="anchored" data-anchor-id="minutes-1">20 minutes</h2>
+<p><strong>When you return:</strong> we’ll work with files + <code>csv</code> + <code>json</code>.</p>
+</section>
+</section>
+<section id="session-3" class="level1">
+<h1>Session 3</h1>
+<section id="files-pathlib-formats" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="files-pathlib-formats">Files + <code>pathlib</code> + formats</h2>
+<div class="muted">
+<p>5:40pm–6:40pm</p>
+</div>
+<hr>
+</section>
+<section id="session-3-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-3-objectives">Session 3 objectives</h2>
+<ul>
+<li>Use <code>pathlib.Path</code> instead of fragile string paths</li>
+<li>Read CSV robustly with <code>csv.DictReader</code></li>
+<li>Write JSON with stable formatting</li>
+<li>Apply safe file-writing habits (<code>mkdir</code>, encoding, newline)</li>
+</ul>
+<hr>
+</section>
+<section id="pathlib.path-is-your-default" class="level2">
+<h2 class="anchored" data-anchor-id="pathlib.path-is-your-default"><code>pathlib.Path</code> is your default</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Path(<span class="st">"data"</span>) <span class="op">/</span> <span class="st">"sample.csv"</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.exists())</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.suffix)   <span class="co"># ".csv"</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.stem)     <span class="co"># "sample"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why?</p>
+<ul>
+<li>cross-platform paths</li>
+<li>easy parent folders</li>
+<li>clearer code</li>
+</ul>
+<hr>
+</section>
+<section id="safe-write-file-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="safe-write-file-pattern">Safe “write file” pattern</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_text(path: <span class="bu">str</span> <span class="op">|</span> Path, text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    path.write_text(text, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="quick-check-3" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-3">Quick Check</h2>
+<p>Why do we use <code>mkdir(parents=True, exist_ok=True)</code>?</p>
+<p>A. It deletes old folders<br>
+B. It creates folders if missing, and doesn’t crash if they exist<br>
+C. It makes the file smaller</p>
+<p>. . .</p>
+<p><strong>Answer:</strong> B</p>
+<hr>
+</section>
+<section id="csv-reading-dictreader" class="level2">
+<h2 class="anchored" data-anchor-id="csv-reading-dictreader">CSV reading: <code>DictReader</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv <span class="im">import</span> DictReader</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_csv_rows(path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]:</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> path.<span class="bu">open</span>(<span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>, newline<span class="op">=</span><span class="st">""</span>) <span class="im">as</span> f:</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="bu">dict</span>(row) <span class="cf">for</span> row <span class="kw">in</span> DictReader(f)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Notes:</p>
+<ul>
+<li><code>newline=""</code> is recommended for CSV files</li>
+<li>values come as strings → you parse them</li>
+</ul>
+<hr>
+</section>
+<section id="mini-exercise-6-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mini-exercise-6-7-minutes">Mini-exercise 6 (7 minutes)</h2>
+<p>Write a helper to get columns from rows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_columns(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rules:</p>
+<ul>
+<li>if <code>rows</code> is empty → return <code>[]</code></li>
+<li>otherwise use the first row’s keys</li>
+</ul>
+<hr>
+</section>
+<section id="solution-get_columns" class="level2">
+<h2 class="anchored" data-anchor-id="solution-get_columns">Solution — <code>get_columns</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_columns(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> rows:</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(rows[<span class="dv">0</span>].keys())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="json-writing-stable-and-readable" class="level2">
+<h2 class="anchored" data-anchor-id="json-writing-stable-and-readable">JSON writing: stable and readable</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_json(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> json.dumps(report, indent<span class="op">=</span><span class="dv">2</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    path.write_text(text, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="designing-your-report-schema-practical" class="level2">
+<h2 class="anchored" data-anchor-id="designing-your-report-schema-practical">Designing your report schema (practical)</h2>
+<p>Keep it simple and stable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> {</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"source"</span>: {<span class="st">"path"</span>: <span class="st">"..."</span>},</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"summary"</span>: {<span class="st">"rows"</span>: <span class="dv">100</span>, <span class="st">"columns"</span>: <span class="dv">8</span>},</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"columns"</span>: {</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"age"</span>: {<span class="st">"type"</span>: <span class="st">"number"</span>, <span class="st">"missing"</span>: <span class="dv">2</span>, <span class="st">"unique"</span>: <span class="dv">31</span>, <span class="st">"min"</span>: <span class="fl">0.0</span>, ...},</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>     <span class="st">"city"</span>: {<span class="st">"type"</span>: <span class="st">"text"</span>, <span class="st">"missing"</span>: <span class="dv">0</span>, <span class="st">"unique"</span>: <span class="dv">5</span>, <span class="st">"top"</span>: [{<span class="st">"value"</span>: <span class="st">"Riyadh"</span>, <span class="st">"count"</span>: <span class="dv">20</span>}]},</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A clear schema makes your CLI and Streamlit app easy later.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="optional-base64-vs-pickle-30-seconds" class="level2">
+<h2 class="anchored" data-anchor-id="optional-base64-vs-pickle-30-seconds">Optional: base64 vs pickle (30 seconds)</h2>
+<ul>
+<li><code>base64</code>: text encoding of bytes (useful for transport)</li>
+<li><code>pickle</code>: Python-only serialization</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Never unpickle data from someone you don’t trust. Pickle can execute code during loading.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="recap-session-3" class="level2">
+<h2 class="anchored" data-anchor-id="recap-session-3">Recap (Session 3)</h2>
+<ul>
+<li>Use <code>Path</code> for paths + folder creation</li>
+<li>Read CSV with <code>DictReader</code></li>
+<li>Write JSON with <code>json.dumps(..., indent=2)</code></li>
+<li>Define a clear report schema</li>
+</ul>
+</section>
+</section>
+<section id="isha-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Isha break</h1>
+<section id="minutes-2" class="level2">
+<h2 class="anchored" data-anchor-id="minutes-2">20 minutes</h2>
+<p><strong>When you return:</strong> Hands-on build (Part 2).</p>
+</section>
+</section>
+<section id="session-4" class="level1 page-columns page-full">
+<h1>Session 4</h1>
+<section id="hands-on-csv-profiler-part-2" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="hands-on-csv-profiler-part-2">Hands-on: CSV Profiler (Part 2)</h2>
+<div class="muted">
+<p>7:00pm–9:00pm</p>
+</div>
+<hr>
+</section>
+<section id="hands-on-success-criteria-what-done-means" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-success-criteria-what-done-means">Hands-on success criteria (what “done” means)</h2>
+<p>By 9:00pm:</p>
+<ul>
+<li>Your profiler detects <code>number</code> vs <code>text</code></li>
+<li>For numeric columns you compute: <code>count</code>, <code>missing</code>, <code>unique</code>, <code>min</code>, <code>max</code>, <code>mean</code></li>
+<li>You generate:
+<ul>
+<li><code>outputs/report.json</code></li>
+<li><code>outputs/report.md</code> (with a summary + a table + per-column details)</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="lab-rules-to-stay-productive" class="level2">
+<h2 class="anchored" data-anchor-id="lab-rules-to-stay-productive">Lab rules (to stay productive)</h2>
+<ul>
+<li>Work in pairs (driver / navigator), switch every 15 minutes</li>
+<li>Keep functions small (10–25 lines)</li>
+<li>If stuck &gt; 5 minutes:
+<ul>
+<li>write down the exact error</li>
+<li>read it out loud</li>
+<li>then ask the instructor/TA</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="task-0-create-a-today-branch-optional" class="level2">
+<h2 class="anchored" data-anchor-id="task-0-create-a-today-branch-optional">Task 0 — Create a “today branch” (optional)</h2>
+<p>If you already know Git:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> day2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you don’t know Git yet: <strong>skip this</strong>. We’ll cover Git later this week.</p>
+<hr>
+</section>
+<section id="task-1-add-shared-helpers-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-add-shared-helpers-10-minutes">Task 1 — Add shared helpers (10 minutes)</h2>
+<p>In <code>src/csv_profiler/profile.py</code>, add:</p>
+<ul>
+<li><code>is_missing(value)</code></li>
+<li><code>try_float(value)</code></li>
+<li><code>infer_type(values)</code></li>
+</ul>
+<p><strong>Checkpoint:</strong> you can call these from a Python REPL and they behave correctly.</p>
+<hr>
+</section>
+<section id="solution-helpers-example" class="level2">
+<h2 class="anchored" data-anchor-id="solution-helpers-example">Solution — helpers (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>MISSING <span class="op">=</span> {<span class="st">""</span>, <span class="st">"na"</span>, <span class="st">"n/a"</span>, <span class="st">"null"</span>, <span class="st">"none"</span>, <span class="st">"nan"</span>}</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_missing(value: <span class="bu">str</span> <span class="op">|</span> <span class="va">None</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> value <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> value.strip().casefold() <span class="kw">in</span> MISSING</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> try_float(value: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">float</span> <span class="op">|</span> <span class="va">None</span>:</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">float</span>(value)</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> infer_type(values: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    usable <span class="op">=</span> [v <span class="cf">for</span> v <span class="kw">in</span> values <span class="cf">if</span> <span class="kw">not</span> is_missing(v)]</span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> usable:</span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"text"</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> usable:</span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> try_float(v) <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">"text"</span></span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"number"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-2-extract-column-values-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-extract-column-values-10-minutes">Task 2 — Extract column values (10 minutes)</h2>
+<p>Add a helper:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> column_values(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]], col: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rules:</p>
+<ul>
+<li>return one value per row (use <code>row.get(col, "")</code>)</li>
+<li>keep as strings (parsing happens later)</li>
+</ul>
+<hr>
+</section>
+<section id="solution-column_values" class="level2">
+<h2 class="anchored" data-anchor-id="solution-column_values">Solution — <code>column_values</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> column_values(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]], col: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [row.get(col, <span class="st">""</span>) <span class="cf">for</span> row <span class="kw">in</span> rows]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-3-numeric-stats-function-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-numeric-stats-function-15-minutes">Task 3 — Numeric stats function (15 minutes)</h2>
+<p>Implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> numeric_stats(values: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute stats for numeric column values (strings)."""</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Requirements:</p>
+<ul>
+<li>ignore missing values</li>
+<li>parse remaining values as floats</li>
+<li>compute: <code>count</code>, <code>missing</code>, <code>unique</code>, <code>min</code>, <code>max</code>, <code>mean</code></li>
+</ul>
+<hr>
+</section>
+<section id="hint-numeric-stats-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="hint-numeric-stats-strategy">Hint — numeric stats strategy</h2>
+<ol type="1">
+<li><code>usable = [v for v in values if not is_missing(v)]</code></li>
+<li><code>nums = [try_float(v) for v in usable]</code></li>
+<li>if any <code>None</code> → treat as text elsewhere (don’t call this function)</li>
+<li>compute stats:
+<ul>
+<li><code>count = len(nums)</code></li>
+<li><code>unique = len(set(nums))</code></li>
+<li><code>min(nums)</code>, <code>max(nums)</code>, <code>sum(nums)/count</code></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="solution-numeric_stats-example" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="solution-numeric_stats-example">Solution — <code>numeric_stats</code> (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> numeric_stats(values: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    usable <span class="op">=</span> [v <span class="cf">for</span> v <span class="kw">in</span> values <span class="cf">if</span> <span class="kw">not</span> is_missing(v)]</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> <span class="bu">len</span>(values) <span class="op">-</span> <span class="bu">len</span>(usable)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    nums: <span class="bu">list</span>[<span class="bu">float</span>] <span class="op">=</span> []</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> usable:</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> try_float(v)</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"Non-numeric value found: </span><span class="sc">{</span>v<span class="sc">!r}</span><span class="ss">"</span>)</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>        nums.append(x)</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="bu">len</span>(nums)</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>    unique <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(nums))</span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"count"</span>: count,</span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"missing"</span>: missing,</span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"unique"</span>: unique,</span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"min"</span>: <span class="bu">min</span>(nums) <span class="cf">if</span> nums <span class="cf">else</span> <span class="va">None</span>,</span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"max"</span>: <span class="bu">max</span>(nums) <span class="cf">if</span> nums <span class="cf">else</span> <span class="va">None</span>,</span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mean"</span>: (<span class="bu">sum</span>(nums) <span class="op">/</span> count) <span class="cf">if</span> count <span class="cf">else</span> <span class="va">None</span>,</span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>We raise an error if something is non-numeric. That makes bugs loud.</p>
+</div></div><hr>
+</section>
+<section id="task-4-text-stats-function-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-text-stats-function-15-minutes">Task 4 — Text stats function (15 minutes)</h2>
+<p>Implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_stats(values: <span class="bu">list</span>[<span class="bu">str</span>], top_k: <span class="bu">int</span> <span class="op">=</span> <span class="dv">5</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Requirements:</p>
+<ul>
+<li>ignore missing values</li>
+<li>compute: <code>count</code>, <code>missing</code>, <code>unique</code></li>
+<li>compute <code>top</code>: top_k most common values with counts</li>
+</ul>
+<hr>
+</section>
+<section id="hint-counting-text-values" class="level2">
+<h2 class="anchored" data-anchor-id="hint-counting-text-values">Hint — counting text values</h2>
+<p>You can implement counts with a dict:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>counts: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {}</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> usable:</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    counts[v] <span class="op">=</span> counts.get(v, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then sort by count descending:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>top <span class="op">=</span> <span class="bu">sorted</span>(counts.items(), key<span class="op">=</span><span class="kw">lambda</span> kv: kv[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:top_k]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="solution-text_stats-example" class="level2">
+<h2 class="anchored" data-anchor-id="solution-text_stats-example">Solution — <code>text_stats</code> (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_stats(values: <span class="bu">list</span>[<span class="bu">str</span>], top_k: <span class="bu">int</span> <span class="op">=</span> <span class="dv">5</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>    usable <span class="op">=</span> [v <span class="cf">for</span> v <span class="kw">in</span> values <span class="cf">if</span> <span class="kw">not</span> is_missing(v)]</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> <span class="bu">len</span>(values) <span class="op">-</span> <span class="bu">len</span>(usable)</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>    counts: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>] <span class="op">=</span> {}</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> usable:</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>        counts[v] <span class="op">=</span> counts.get(v, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a>    top_items <span class="op">=</span> <span class="bu">sorted</span>(counts.items(), key<span class="op">=</span><span class="kw">lambda</span> kv: kv[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:top_k]</span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a>    top <span class="op">=</span> [{<span class="st">"value"</span>: v, <span class="st">"count"</span>: c} <span class="cf">for</span> v, c <span class="kw">in</span> top_items]</span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"count"</span>: <span class="bu">len</span>(usable),</span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"missing"</span>: missing,</span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"unique"</span>: <span class="bu">len</span>(counts),</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"top"</span>: top,</span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-5-upgrade-basic_profile-20-minutes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="task-5-upgrade-basic_profile-20-minutes">Task 5 — Upgrade <code>basic_profile</code> (20 minutes)</h2>
+<p>Update <code>basic_profile(rows)</code> so it returns:</p>
+<ul>
+<li><code>source</code> (path optional for now)</li>
+<li><code>summary</code>: rows, columns</li>
+<li><code>columns</code>: a dict keyed by column name with:
+<ul>
+<li><code>type</code> (<code>number</code>/<code>text</code>)</li>
+<li>stats from <code>numeric_stats</code> or <code>text_stats</code></li>
+</ul></li>
+</ul>
+<p><strong>Checkpoint:</strong> <code>report["columns"]["age"]["type"] == "number"</code> (for your sample data).</p>
+<hr>
+</section>
+<section id="solution-basic_profile-example" class="level2">
+<h2 class="anchored" data-anchor-id="solution-basic_profile-example">Solution — <code>basic_profile</code> (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> basic_profile(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    cols <span class="op">=</span> get_columns(rows)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> {</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span>: {</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"rows"</span>: <span class="bu">len</span>(rows),</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"columns"</span>: <span class="bu">len</span>(cols),</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"column_names"</span>: cols,</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"columns"</span>: {},</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> cols:</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> column_values(rows, col)</span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>        typ <span class="op">=</span> infer_type(values)</span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> typ <span class="op">==</span> <span class="st">"number"</span>:</span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>            stats <span class="op">=</span> numeric_stats(values)</span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a>            stats <span class="op">=</span> text_stats(values)</span>
+<span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-21"><a href="#cb62-21" aria-hidden="true" tabindex="-1"></a>        report[<span class="st">"columns"</span>][col] <span class="op">=</span> {<span class="st">"type"</span>: typ, <span class="op">**</span>stats}</span>
+<span id="cb62-22"><a href="#cb62-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-23"><a href="#cb62-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-6-upgrade-write_markdown-25-minutes" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="task-6-upgrade-write_markdown-25-minutes">Task 6 — Upgrade <code>write_markdown</code> (25 minutes)</h2>
+<p>In <code>src/csv_profiler/render.py</code>, update <code>write_markdown(report, path)</code> to include:</p>
+<ol type="1">
+<li>Header block (<code>md_header(...)</code>)</li>
+<li>Summary bullets:
+<ul>
+<li>rows, columns</li>
+</ul></li>
+<li>A table: one row per column (type, missing %, unique)</li>
+<li>Per-column details section:
+<ul>
+<li>For numeric: min/max/mean</li>
+<li>For text: top values list</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="hint-computing-missing-percentage" class="level2">
+<h2 class="anchored" data-anchor-id="hint-computing-missing-percentage">Hint — computing missing percentage</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> report[<span class="st">"summary"</span>][<span class="st">"rows"</span>]</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> col_report[<span class="st">"missing"</span>]</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>missing_pct <span class="op">=</span> (missing <span class="op">/</span> rows) <span class="cf">if</span> rows <span class="cf">else</span> <span class="fl">0.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="solution-write_markdown-example-simple" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="solution-write_markdown-example-simple">Solution — <code>write_markdown</code> (example, simple)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_markdown(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>    path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> report[<span class="st">"summary"</span>][<span class="st">"rows"</span>]</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    lines: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> []</span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    lines.extend(md_header(<span class="st">"data/sample.csv"</span>))</span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"## Summary"</span>)</span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="ss">f"- Rows: </span><span class="sc">{</span>rows<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="ss">f"- Columns: </span><span class="sc">{</span>report[<span class="st">'summary'</span>][<span class="st">'columns'</span>]<span class="sc">:,}</span><span class="ss">"</span>)</span>
+<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">""</span>)</span>
+<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"## Columns (table)"</span>)</span>
+<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a>    lines.extend(md_table_header())</span>
+<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, col <span class="kw">in</span> report[<span class="st">"columns"</span>].items():</span>
+<span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a>        missing_pct <span class="op">=</span> (col[<span class="st">"missing"</span>] <span class="op">/</span> rows) <span class="cf">if</span> rows <span class="cf">else</span> <span class="fl">0.0</span></span>
+<span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a>        lines.append(md_col_row(name, col[<span class="st">"type"</span>], col[<span class="st">"missing"</span>], missing_pct, col[<span class="st">"unique"</span>]))</span>
+<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">""</span>)</span>
+<span id="cb64-25"><a href="#cb64-25" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"## Column details"</span>)</span>
+<span id="cb64-26"><a href="#cb64-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-27"><a href="#cb64-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, col <span class="kw">in</span> report[<span class="st">"columns"</span>].items():</span>
+<span id="cb64-28"><a href="#cb64-28" aria-hidden="true" tabindex="-1"></a>        lines.append(<span class="ss">f"### `</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">` (</span><span class="sc">{</span>col[<span class="st">'type'</span>]<span class="sc">}</span><span class="ss">)"</span>)</span>
+<span id="cb64-29"><a href="#cb64-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-30"><a href="#cb64-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> col[<span class="st">"type"</span>] <span class="op">==</span> <span class="st">"number"</span>:</span>
+<span id="cb64-31"><a href="#cb64-31" aria-hidden="true" tabindex="-1"></a>            lines.append(<span class="ss">f"- min: </span><span class="sc">{</span>col[<span class="st">'min'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-32"><a href="#cb64-32" aria-hidden="true" tabindex="-1"></a>            lines.append(<span class="ss">f"- max: </span><span class="sc">{</span>col[<span class="st">'max'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-33"><a href="#cb64-33" aria-hidden="true" tabindex="-1"></a>            lines.append(<span class="ss">f"- mean: </span><span class="sc">{</span>col[<span class="st">'mean'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-34"><a href="#cb64-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb64-35"><a href="#cb64-35" aria-hidden="true" tabindex="-1"></a>            top <span class="op">=</span> col.get(<span class="st">"top"</span>, [])</span>
+<span id="cb64-36"><a href="#cb64-36" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> top:</span>
+<span id="cb64-37"><a href="#cb64-37" aria-hidden="true" tabindex="-1"></a>                lines.append(<span class="st">"- (no non-missing values)"</span>)</span>
+<span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb64-39"><a href="#cb64-39" aria-hidden="true" tabindex="-1"></a>                lines.append(<span class="st">"- top values:"</span>)</span>
+<span id="cb64-40"><a href="#cb64-40" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> item <span class="kw">in</span> top:</span>
+<span id="cb64-41"><a href="#cb64-41" aria-hidden="true" tabindex="-1"></a>                    lines.append(<span class="ss">f"  - `</span><span class="sc">{</span>item[<span class="st">'value'</span>]<span class="sc">}</span><span class="ss">`: </span><span class="sc">{</span>item[<span class="st">'count'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-42"><a href="#cb64-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-43"><a href="#cb64-43" aria-hidden="true" tabindex="-1"></a>        lines.append(<span class="st">""</span>)</span>
+<span id="cb64-44"><a href="#cb64-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-45"><a href="#cb64-45" aria-hidden="true" tabindex="-1"></a>    path.write_text(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(lines) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep it “simple but correct” today. We’ll polish the report formatting later.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="task-7-run-end-to-end-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-run-end-to-end-10-minutes">Task 7 — Run end-to-end (10 minutes)</h2>
+<p>Run:</p>
+<ul>
+<li>Unix/macOS:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="va">PYTHONPATH</span><span class="op">=</span>src <span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Windows PowerShell:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">PYTHONPATH</span><span class="op">=</span><span class="st">"src"</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>uv run python main<span class="op">.</span><span class="fu">py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Checkpoint:</strong> - <code>outputs/report.json</code> has types and stats - <code>outputs/report.md</code> has a table and details</p>
+<hr>
+</section>
+<section id="debug-playbook-when-it-fails" class="level2">
+<h2 class="anchored" data-anchor-id="debug-playbook-when-it-fails">Debug playbook (when it fails)</h2>
+<ol type="1">
+<li>Read the traceback <strong>top to bottom</strong></li>
+<li>Find the first line that points to <strong>your code</strong></li>
+<li>Print intermediate values:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DEBUG values:"</span>, values[:<span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Confirm assumptions:</li>
+</ol>
+<ul>
+<li>are you reading the file you think you are?</li>
+<li>are there missing keys?</li>
+<li>are strings like <code>" "</code> being treated as missing?</li>
+</ul>
+<hr>
+</section>
+<section id="stretch-if-you-finish-early" class="level2">
+<h2 class="anchored" data-anchor-id="stretch-if-you-finish-early">Stretch (if you finish early)</h2>
+<p>Pick <strong>one</strong>:</p>
+<ul>
+<li>Add <code>median</code> (hint: sort and pick middle)</li>
+<li>Add a “mostly numeric” rule (e.g., ≥ 90% parse as float)</li>
+<li>Add a <code>--input</code> / <code>--output</code> argument using <code>argparse</code> <em>(Typer comes tomorrow)</em></li>
+</ul>
+<hr>
+</section>
+<section id="exit-ticket" class="level2">
+<h2 class="anchored" data-anchor-id="exit-ticket">Exit Ticket</h2>
+<p>In 1–2 sentences:</p>
+<p><strong>What made your profiler “better” today compared to Day 1?</strong></p>
+<hr>
+</section>
+<section id="what-to-do-after-class-day-2-assignment" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="what-to-do-after-class-day-2-assignment">What to do after class (Day 2 assignment)</h2>
+<p><strong>Due:</strong> before Day 3 starts (Tue, 16 Dec 2025)</p>
+<ol type="1">
+<li>Add at least <strong>2 new columns</strong> to <code>data/sample.csv</code> (one numeric, one text)</li>
+<li>Rerun the profiler and check that:
+<ul>
+<li>types are correct</li>
+<li>stats update correctly</li>
+</ul></li>
+<li>Improve your Markdown:
+<ul>
+<li>format numeric values with <code>:.2f</code> where relevant</li>
+<li>show missing percentage in the table</li>
+</ul></li>
+</ol>
+<p><strong>Deliverable:</strong> a zip or folder with your updated <code>csv-profiler/</code>.</p>
+</section>
+</section>
+<section id="thank-you" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Thank You!</h1>
+<div style="width: 300px">
+
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

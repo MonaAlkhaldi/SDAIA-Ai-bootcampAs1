@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="malfadly@sdaia.gov.sa">
+<meta name="dcterms.date" content="2025-12-14">
+
+<title>AI Pros | W1 D1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="W1_Python_D1_Python_Tooling_files/libs/clipboard/clipboard.min.js"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/popper.min.js"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="W1_Python_D1_Python_Tooling_files/libs/quarto-html/anchor.min.js"></script>
+<link href="W1_Python_D1_Python_Tooling_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="W1_Python_D1_Python_Tooling_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="W1_Python_D1_Python_Tooling_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="W1_Python_D1_Python_Tooling_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="W1_Python_D1_Python_Tooling_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python &amp; Tooling</h1>
+<p class="subtitle lead">AI Professionals Bootcamp | Week 1</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="day-1-python-tooling" class="level1 page-columns page-full">
+<h1>Day 1: Python &amp; Tooling</h1>
+<p><strong>Goal:</strong> Set up your environment, use the shell confidently, and write your first Python scripts that read a CSV and produce a basic profile.</p>
+<div class="muted">
+<p>Bootcamp • SDAIA Academy</p>
+</div>
+<div class="notes">
+<p><strong>Say:</strong> This week is “no GenAI” (except clarifying questions). We’re building fundamentals.</p>
+<p><strong>Do:</strong> Confirm everyone can open a terminal + VS Code.</p>
+<p><strong>Ask:</strong> “What’s harder for you right now: terminal, Python syntax, or Git?”</p>
+<p><strong>Timebox:</strong> 3 minutes.</p>
+</div>
+<hr>
+<section id="todays-flow" class="level2">
+<h2 class="anchored" data-anchor-id="todays-flow">Today’s Flow</h2>
+<ul>
+<li><strong>Session 1 (60m):</strong> Setup + Shell essentials + <code>uv</code></li>
+<li><em>Asr Prayer (20m)</em></li>
+<li><strong>Session 2 (60m):</strong> Values, containers, operators</li>
+<li><em>Maghrib Prayer (20m)</em></li>
+<li><strong>Session 3 (60m):</strong> Control flow + types + files</li>
+<li><em>Isha Prayer (20m)</em></li>
+<li><strong>Hands-on (120m):</strong> weekly project start (CSV Profiler)</li>
+</ul>
+<hr>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of today, you can:</p>
+<ul>
+<li>Navigate and inspect files using basic shell commands</li>
+<li>Create and use a Python environment with <code>uv</code></li>
+<li>Write Python scripts with variables, basic types, and control flow</li>
+<li>Read a CSV and compute a <strong>basic profiling summary</strong></li>
+<li>Write outputs to <strong>Markdown</strong> and <strong>JSON</strong> files</li>
+</ul>
+<hr>
+</section>
+<section id="week-1-outcomes-ship-by-thu-1159pm" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="week-1-outcomes-ship-by-thu-1159pm">Week 1 outcomes (ship by Thu 11:59pm)</h2>
+<p>You will build a small app with <strong>two interfaces</strong>:</p>
+<ul>
+<li><strong>CLI</strong> (command line) → reads CSV → writes <code>report.md</code> and <code>report.json</code></li>
+<li><strong>GUI</strong> with <strong>Streamlit</strong> → uploads/reads CSV → shows profile → export files</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>This week is fundamentals: you’ll implement the profiling logic yourself.</p>
+</div></div><hr>
+</section>
+<section id="policy-genai-usage-week-1" class="level2">
+<h2 class="anchored" data-anchor-id="policy-genai-usage-week-1">Policy: GenAI usage (Week 1)</h2>
+<ul>
+<li>✅ Allowed: <strong>clarifying questions</strong> (definitions, error explanations)</li>
+<li>❌ Not allowed: generating code, writing solutions, or debugging by copy-paste</li>
+<li>If unsure: ask the instructor first</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This week’s point is skill-building. Using GenAI to do the work breaks the learning loop.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="certificates-bootcamp-wide" class="level2">
+<h2 class="anchored" data-anchor-id="certificates-bootcamp-wide">Certificates (Bootcamp-wide)</h2>
+<ul>
+<li><strong>Certificate of Completion:</strong> final grade <strong>≥ 70%</strong> by end of the bootcamp</li>
+<li><strong>Certificate of Attendance:</strong> if not passing, but <strong>fewer than 4 excused absences</strong></li>
+</ul>
+<hr>
+</section>
+<section id="bootcamp-calendar-so-you-see-the-path" class="level2">
+<h2 class="anchored" data-anchor-id="bootcamp-calendar-so-you-see-the-path">Bootcamp calendar (so you see the path)</h2>
+<ul>
+<li>Week 01 (14–18 Dec 2025): <strong>Python &amp; Tooling</strong></li>
+<li>Week 02: Data Work (ETL + EDA)</li>
+<li>Week 03: Machine Learning</li>
+<li>Week 04: Deep Learning &amp; Computer Vision</li>
+<li>Week 05: LLM-based NLP</li>
+<li>Week 06: Building AI Apps</li>
+<li>Week 07: Agentic AI &amp; Practical MLOps</li>
+<li>Week 08: Capstone Sprint + Job Readiness</li>
+</ul>
+<hr>
+</section>
+<section id="our-week-1-project-csv-profiler" class="level2">
+<h2 class="anchored" data-anchor-id="our-week-1-project-csv-profiler">Our Week 1 project: “CSV Profiler”</h2>
+<p><strong>Input:</strong> a CSV file</p>
+<p><strong>Output:</strong></p>
+<ul>
+<li><code>report.json</code> → machine-readable profiling stats</li>
+<li><code>report.md</code> → human-readable report</li>
+</ul>
+<p><strong>Your code</strong> will handle:</p>
+<ul>
+<li>Missing values</li>
+<li>Inferred column types (number / text / mixed)</li>
+<li>Basic stats (count, unique, min/max/mean when numeric)</li>
+</ul>
+<hr>
+</section>
+<section id="how-well-work-in-class" class="level2">
+<h2 class="anchored" data-anchor-id="how-well-work-in-class">How we’ll work in class</h2>
+<ul>
+<li>Short chunks of theory</li>
+<li>Micro-exercises (3–8 minutes)</li>
+<li>Checkpoints every ~15 minutes</li>
+<li>“Hands-on” block = build the project (with help)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you get stuck: write down the <strong>exact error</strong>, the <strong>command you ran</strong>, and the <strong>file you edited</strong>.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="session-1" class="level1 page-columns page-full">
+<h1>Session 1</h1>
+<section id="setup-shell-essentials-uv" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="setup-shell-essentials-uv">Setup + Shell essentials + <code>uv</code></h2>
+<div class="muted">
+<p>3:00pm–4:00pm</p>
+</div>
+<hr>
+</section>
+<section id="session-1-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-1-objectives">Session 1 objectives</h2>
+<ul>
+<li>Open a terminal and move around the filesystem</li>
+<li>Understand paths: absolute vs relative</li>
+<li>Find your Python and inspect environment variables</li>
+<li>Create a Python env and run a script with <code>uv</code></li>
+</ul>
+<hr>
+</section>
+<section id="terminal-vocabulary" class="level2">
+<h2 class="anchored" data-anchor-id="terminal-vocabulary">Terminal vocabulary</h2>
+<ul>
+<li><strong>Terminal</strong>: the window</li>
+<li><strong>Shell</strong>: the program that reads your commands (bash, zsh, PowerShell)</li>
+<li><strong>Command</strong>: a program you run (<code>ls</code>, <code>python</code>, <code>git</code>)</li>
+<li><strong>Working directory</strong>: “where you are” right now</li>
+</ul>
+<hr>
+</section>
+<section id="ides-you-can-use-pick-one" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="ides-you-can-use-pick-one">IDEs you can use (pick one)</h2>
+<ul>
+<li><strong>VS Code</strong> (recommended for this bootcamp)</li>
+<li><strong>JupyterLab</strong> (great for exploration)</li>
+<li><strong>Google Colab</strong> (only when local setup is blocked)</li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Today we’ll work mostly with scripts in VS Code.</p>
+</div></div><hr>
+</section>
+<section id="navigation-where-am-i" class="level2">
+<h2 class="anchored" data-anchor-id="navigation-where-am-i">Navigation: where am I?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Command</strong></p>
+<ul>
+<li><code>pwd</code> → print working directory</li>
+<li><code>ls</code> (mac/linux) or <code>dir</code> (Windows) → list files</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Try it</strong></p>
+<ol type="1">
+<li>Run <code>pwd</code></li>
+<li>Run <code>ls</code> / <code>dir</code></li>
+<li>Find your “Downloads” or “Desktop” folder</li>
+</ol>
+</div>
+</div>
+<div class="notes">
+<p><strong>Do:</strong> Live demo: <code>pwd</code> then <code>ls</code>, explain “working directory”.</p>
+<p><strong>Ask:</strong> “What folder are you in right now?”</p>
+<p><strong>Timebox:</strong> 4 minutes.</p>
+</div>
+<hr>
+</section>
+<section id="navigation-moving-around" class="level2">
+<h2 class="anchored" data-anchor-id="navigation-moving-around">Navigation: moving around</h2>
+<ul>
+<li><code>cd &lt;path&gt;</code> → change directory</li>
+<li><code>cd ..</code> → go up one folder</li>
+<li><code>cd .</code> → current folder (rarely useful)</li>
+<li><code>cd ~</code> → home folder</li>
+<li><code>cd -</code> → previous folder (super useful)</li>
+</ul>
+<hr>
+</section>
+<section id="paths-absolute-vs-relative" class="level2">
+<h2 class="anchored" data-anchor-id="paths-absolute-vs-relative">Paths: absolute vs relative</h2>
+<p><strong>Absolute path</strong> starts from the root.</p>
+<ul>
+<li>mac/linux: <code>/Users/&lt;name&gt;/...</code></li>
+<li>Windows: <code>C:\Users\&lt;name&gt;\...</code></li>
+</ul>
+<p><strong>Relative path</strong> starts from your current folder.</p>
+<ul>
+<li><code>./data/sample.csv</code> (inside current folder)</li>
+<li><code>../data/sample.csv</code> (one level up)</li>
+</ul>
+<hr>
+</section>
+<section id="path-gotchas-avoid-20-minutes-of-pain" class="level2">
+<h2 class="anchored" data-anchor-id="path-gotchas-avoid-20-minutes-of-pain">Path gotchas (avoid 20 minutes of pain)</h2>
+<ul>
+<li>Spaces in folder names can confuse commands → use quotes
+<ul>
+<li><code>cd "My Files"</code></li>
+</ul></li>
+<li>Case matters on mac/linux (<code>Data</code> ≠ <code>data</code>)</li>
+<li>Prefer putting your project in a simple path like <code>~/bootcamp/</code></li>
+</ul>
+<hr>
+</section>
+<section id="micro-exercise-path-ninja-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="micro-exercise-path-ninja-5-minutes">Micro-exercise: “Path ninja” (5 minutes)</h2>
+<ol type="1">
+<li><code>cd ~</code></li>
+<li>Create a new folder called <code>bootcamp</code> <em>(use your file explorer if needed)</em></li>
+<li><code>cd bootcamp</code></li>
+<li>Confirm with <code>pwd</code> and <code>ls</code> / <code>dir</code></li>
+</ol>
+<p><strong>Checkpoint:</strong> your terminal shows you are inside <code>bootcamp</code>.</p>
+<hr>
+</section>
+<section id="environment-variables-why-you-care" class="level2">
+<h2 class="anchored" data-anchor-id="environment-variables-why-you-care">Environment variables (why you care)</h2>
+<ul>
+<li>They are <strong>settings</strong> for programs</li>
+<li>Most common: <code>PATH</code> (where your shell looks for commands)</li>
+</ul>
+<p>Try:</p>
+<ul>
+<li><code>echo $PATH</code> (mac/linux)</li>
+<li><code>echo $env:PATH</code> (PowerShell)</li>
+</ul>
+<hr>
+</section>
+<section id="finding-executables" class="level2">
+<h2 class="anchored" data-anchor-id="finding-executables">Finding executables</h2>
+<ul>
+<li><code>which python</code> (mac/linux)</li>
+<li><code>where python</code> (Windows)</li>
+</ul>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>If you see a path inside <code>.venv/</code> → you are in a virtual environment</li>
+<li>If you see a system path → you are using system Python</li>
+</ul>
+<hr>
+</section>
+<section id="why-virtual-environments" class="level2">
+<h2 class="anchored" data-anchor-id="why-virtual-environments">Why virtual environments?</h2>
+<p>Different projects need different packages.</p>
+<ul>
+<li>✅ reproducible installs</li>
+<li>✅ no “works on my machine”</li>
+<li>✅ you can safely delete and recreate</li>
+</ul>
+<hr>
+</section>
+<section id="uv-our-tool-for-environments-installs" class="level2">
+<h2 class="anchored" data-anchor-id="uv-our-tool-for-environments-installs"><code>uv</code>: our tool for environments + installs</h2>
+<p>Today we’ll use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> venv <span class="at">-p</span> 3.11</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> pip install <span class="op">&lt;</span>package<span class="op">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run <span class="op">&lt;</span>script.py<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="activate-vs-uv-run" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="activate-vs-uv-run">Activate vs <code>uv run</code></h2>
+<ul>
+<li>If you <strong>activate</strong>, <code>python</code> and <code>pip</code> point to the env</li>
+<li>If you <strong>don’t activate</strong>, <code>uv run ...</code> still uses the env</li>
+</ul>
+<p><strong>Recommended habit:</strong> use <code>uv run</code> for anything you want to be reproducible</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>You can activate the env, but <code>uv run</code> works even if you forget.</p>
+</div></div><hr>
+</section>
+<section id="create-a-new-env-demo-do" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-env-demo-do">Create a new env (demo + do)</h2>
+<p>From inside <code>bootcamp/</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> venv <span class="at">-p</span> 3.11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Expected result: a folder named <code>.venv/</code></p>
+<hr>
+</section>
+<section id="activate-vs-dont-activate" class="level2">
+<h2 class="anchored" data-anchor-id="activate-vs-dont-activate">“Activate” vs “don’t activate”</h2>
+<ul>
+<li>If you <strong>activate</strong>, <code>python</code> points to <code>.venv</code> automatically</li>
+<li>If you <strong>don’t</strong>, use <code>uv run ...</code> to guarantee the env</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you ever wonder “which python am I using?”, run <code>which python</code> / <code>where python</code>.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="activate-optional-but-useful" class="level2">
+<h2 class="anchored" data-anchor-id="activate-optional-but-useful">Activate (optional but useful)</h2>
+<p>mac/linux:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> .venv/bin/activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Windows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">venv</span>\Scripts\activate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check:</strong> your prompt usually changes.</p>
+<hr>
+</section>
+<section id="install-a-package-well-use-later" class="level2">
+<h2 class="anchored" data-anchor-id="install-a-package-well-use-later">Install a package (we’ll use later)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> pip install typer streamlit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If installation fails: copy the full error + your OS info and ask the instructor.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="run-a-python-script-with-uv-run" class="level2">
+<h2 class="anchored" data-anchor-id="run-a-python-script-with-uv-run">Run a Python script with <code>uv run</code></h2>
+<p>Create <code>hello.py</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello from Week 1!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run hello.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="quick-check" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check">Quick Check</h2>
+<p>What is the main difference?</p>
+<ul>
+<li><ol type="A">
+<li><code>uv run hello.py</code></li>
+</ol></li>
+<li><ol start="2" type="A">
+<li><code>python hello.py</code></li>
+</ol></li>
+</ul>
+<p>. . .</p>
+<p><strong>Answer:</strong> <code>uv run</code> ensures the command runs inside the project environment.</p>
+<hr>
+</section>
+<section id="mini-lab-run-break-fix-7-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mini-lab-run-break-fix-7-minutes">Mini-lab: “Run + break + fix” (7 minutes)</h2>
+<ol type="1">
+<li>Change <code>hello.py</code> to print your name</li>
+<li>Introduce a syntax error (missing quote)</li>
+<li>Run it and read the error</li>
+<li>Fix it</li>
+</ol>
+<p><strong>Checkpoint:</strong> you can explain what line the error points to.</p>
+<hr>
+</section>
+<section id="session-1-recap" class="level2">
+<h2 class="anchored" data-anchor-id="session-1-recap">Session 1 recap</h2>
+<ul>
+<li>Terminal basics: <code>pwd</code>, <code>ls/dir</code>, <code>cd</code></li>
+<li>Paths and environment variables</li>
+<li><code>uv venv</code> + <code>uv run</code></li>
+</ul>
+</section>
+</section>
+<section id="asr-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Asr break</h1>
+<section id="minutes" class="level2">
+<h2 class="anchored" data-anchor-id="minutes">20 minutes</h2>
+<p><strong>When you return:</strong> open VS Code in your <code>bootcamp/</code> folder.</p>
+</section>
+</section>
+<section id="session-2" class="level1 page-columns page-full">
+<h1>Session 2</h1>
+<section id="python-values-containers-operators" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="python-values-containers-operators">Python values, containers, operators</h2>
+<div class="muted">
+<p>4:20pm–5:20pm</p>
+</div>
+<hr>
+</section>
+<section id="session-2-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-2-objectives">Session 2 objectives</h2>
+<ul>
+<li>Recognize Python’s core value types</li>
+<li>Use lists/tuples/sets/dicts</li>
+<li>Use arithmetic, comparison, and logical operators</li>
+<li>Predict the output of short expressions</li>
+</ul>
+<hr>
+</section>
+<section id="a-python-program-is-just-values-steps" class="level2">
+<h2 class="anchored" data-anchor-id="a-python-program-is-just-values-steps">A Python program is just values + steps</h2>
+<ol type="1">
+<li>Create values (numbers, text, containers)</li>
+<li>Combine them (operators)</li>
+<li>Make decisions (if / loops)</li>
+<li>Organize into functions and files</li>
+</ol>
+<hr>
+</section>
+<section id="literals-quick-tour" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="literals-quick-tour">Literals: quick tour</h2>
+<ul>
+<li><code>None</code>, <code>True</code>, <code>False</code></li>
+<li>Integers: <code>0</code>, <code>-2</code>, <code>1_000_000</code>, <code>0x1f</code></li>
+<li>Floats: <code>1.5</code>, <code>1e6</code>, <code>-2.5e-3</code></li>
+<li>Strings: <code>'hi'</code>, <code>"hi"</code>, <code>"""multi"""</code></li>
+</ul>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Underscores in numbers are allowed: <code>1_000_000</code>.</p>
+</div></div><hr>
+</section>
+<section id="containers-youll-use-these-all-week" class="level2">
+<h2 class="anchored" data-anchor-id="containers-youll-use-these-all-week">Containers (you’ll use these all week)</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Example</th>
+<th>Mutable?</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>list</code></td>
+<td><code>[1, 2, 3]</code></td>
+<td>✅</td>
+<td>ordered items</td>
+</tr>
+<tr class="even">
+<td><code>tuple</code></td>
+<td><code>(1, 2)</code></td>
+<td>❌</td>
+<td>fixed group</td>
+</tr>
+<tr class="odd">
+<td><code>set</code></td>
+<td><code>{1, 2}</code></td>
+<td>✅</td>
+<td>unique items</td>
+</tr>
+<tr class="even">
+<td><code>dict</code></td>
+<td><code>{ "a": 1 }</code></td>
+<td>✅</td>
+<td>key → value</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="tuples-vs-lists-when-to-use-which" class="level2">
+<h2 class="anchored" data-anchor-id="tuples-vs-lists-when-to-use-which">Tuples vs lists (when to use which?)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Tuple</strong> (immutable)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Fixed structure</li>
+<li>Safe to pass around</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>List</strong> (mutable)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Aisha"</span>, <span class="st">"Noor"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>names.append(<span class="st">"Salem"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Grows/shrinks</li>
+<li>Good for accumulation</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="tuples-vs-lists-quick-intuition" class="level2">
+<h2 class="anchored" data-anchor-id="tuples-vs-lists-quick-intuition">Tuples vs lists (quick intuition)</h2>
+<ul>
+<li>Use a <strong>list</strong> when you plan to change it</li>
+<li>Use a <strong>tuple</strong> for a fixed “record” (like coordinates)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> (<span class="fl">24.7136</span>, <span class="fl">46.6753</span>)  <span class="co"># (lat, lon)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Aisha"</span>, <span class="st">"Fahad"</span>]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>names.append(<span class="st">"Noor"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="sets-uniqueness-tool" class="level2">
+<h2 class="anchored" data-anchor-id="sets-uniqueness-tool">Sets: uniqueness tool</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>unique <span class="op">=</span> <span class="bu">set</span>(items)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unique)  <span class="co"># {'a','b','c'} (order not guaranteed)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use cases:</p>
+<ul>
+<li>remove duplicates</li>
+<li>fast membership checks (<code>x in my_set</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="variables-are-labels-not-boxes" class="level2">
+<h2 class="anchored" data-anchor-id="variables-are-labels-not-boxes">Variables are labels, not boxes</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>y.append(<span class="dv">4</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># ?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>. . .</p>
+<p><code>x</code> becomes <code>[1, 2, 3, 4]</code> because <code>x</code> and <code>y</code> point to the same list.</p>
+<hr>
+</section>
+<section id="operators-your-everyday-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="operators-your-everyday-toolkit">Operators: your everyday toolkit</h2>
+<ul>
+<li>Arithmetic: <code>+ - * / // % **</code></li>
+<li>Comparison: <code>&lt; &lt;= == != &gt;= &gt;</code></li>
+<li>Logical: <code>and or not</code></li>
+<li>Membership: <code>in</code>, <code>not in</code></li>
+<li>Identity: <code>is</code>, <code>is not</code> <em>(usually with <code>None</code>)</em></li>
+</ul>
+<hr>
+</section>
+<section id="in-vs-vs-is" class="level2">
+<h2 class="anchored" data-anchor-id="in-vs-vs-is"><code>in</code> vs <code>==</code> vs <code>is</code></h2>
+<ul>
+<li><code>x in container</code> → membership (lists/strings/sets/dicts)</li>
+<li><code>x == y</code> → value equality</li>
+<li><code>x is y</code> → same object in memory <em>(use for <code>None</code>)</em></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"missing"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="operator-precedence-dont-guess" class="level2">
+<h2 class="anchored" data-anchor-id="operator-precedence-dont-guess">Operator precedence (don’t guess)</h2>
+<p>Rule of thumb:</p>
+<ol type="1">
+<li>Parentheses <code>(...)</code></li>
+<li>Power <code>**</code></li>
+<li>Multiply/divide <code>* / // %</code></li>
+<li>Add/subtract <code>+ -</code></li>
+<li>Comparisons <code>== &lt; &gt; ...</code></li>
+<li><code>not</code> → <code>and</code> → <code>or</code></li>
+</ol>
+<p>When in doubt: add parentheses.</p>
+<hr>
+</section>
+<section id="operator-precedence-mental-model" class="level2">
+<h2 class="anchored" data-anchor-id="operator-precedence-mental-model">Operator precedence (mental model)</h2>
+<ol type="1">
+<li>Parentheses <code>(...)</code></li>
+<li>Exponents <code>**</code></li>
+<li>Multiply/divide <code>* / // %</code></li>
+<li>Add/subtract <code>+ -</code></li>
+<li>Comparisons <code>&lt; == &gt;</code></li>
+<li>Logical <code>not</code>, <code>and</code>, <code>or</code></li>
+</ol>
+<p>When in doubt: add parentheses.</p>
+<hr>
+</section>
+<section id="quick-check-predict-the-result" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-predict-the-result">Quick Check: predict the result</h2>
+<p>What do these evaluate to?</p>
+<ol type="1">
+<li><code>5 // 2</code></li>
+<li><code>5 / 2</code></li>
+<li><code>5 % 2</code></li>
+<li><code>2 ** 3</code></li>
+</ol>
+<p>. . .</p>
+<p>Answers: <code>2</code>, <code>2.5</code>, <code>1</code>, <code>8</code></p>
+<hr>
+</section>
+<section id="truthiness-important-for-data-work" class="level2">
+<h2 class="anchored" data-anchor-id="truthiness-important-for-data-work">Truthiness (important for data work)</h2>
+<p>These are <strong>False</strong>:</p>
+<ul>
+<li><code>None</code>, <code>0</code>, <code>0.0</code>, <code>""</code>, <code>[]</code>, <code>{}</code>, <code>set()</code></li>
+</ul>
+<p>Most other things are <strong>True</strong>.</p>
+<hr>
+</section>
+<section id="casting-turning-text-into-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="casting-turning-text-into-numbers">Casting: turning text into numbers</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"32"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">"-2.5e-3"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">bool</span>(<span class="st">"False"</span>)  <span class="co"># careful!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>bool("False")</code> is <strong>True</strong> because it’s a non-empty string.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="mini-quiz-pairs-casting" class="level2">
+<h2 class="anchored" data-anchor-id="mini-quiz-pairs-casting">Mini-quiz (pairs): casting</h2>
+<p>Decide <strong>without running</strong>:</p>
+<ol type="1">
+<li><code>bool([])</code></li>
+<li><code>bool([0])</code></li>
+<li><code>int(1.9)</code></li>
+<li><code>float(3)</code></li>
+</ol>
+<p>. . .</p>
+<p>Answers: <code>False</code>, <code>True</code>, <code>1</code>, <code>3.0</code></p>
+<hr>
+</section>
+<section id="lists-indexing-and-slicing" class="level2">
+<h2 class="anchored" data-anchor-id="lists-indexing-and-slicing">Lists: indexing and slicing</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="dv">1</span>])     <span class="co"># 5</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="op">-</span><span class="dv">2</span>])    <span class="co"># 8</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="dv">1</span>:<span class="dv">3</span>])   <span class="co"># [5, 6]</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[::<span class="op">-</span><span class="dv">1</span>])  <span class="co"># reversed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="list-comprehensions-loop-list" class="level2">
+<h2 class="anchored" data-anchor-id="list-comprehensions-loop-list">List comprehensions (loop → list)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [n <span class="op">*</span> n <span class="cf">for</span> n <span class="kw">in</span> nums]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>evens <span class="op">=</span> [n <span class="cf">for</span> n <span class="kw">in</span> nums <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use when it’s short and clear.</p>
+<hr>
+</section>
+<section id="dicts-the-data-row-type" class="level2">
+<h2 class="anchored" data-anchor-id="dicts-the-data-row-type">Dicts: the “data row” type</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"Aisha"</span>, <span class="st">"age"</span>: <span class="dv">23</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(row[<span class="st">"name"</span>])</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>row[<span class="st">"age"</span>] <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why we care:</p>
+<ul>
+<li><code>csv.DictReader</code> gives you dicts (column → value)</li>
+</ul>
+<hr>
+</section>
+<section id="micro-exercise-build-a-tiny-row-6-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="micro-exercise-build-a-tiny-row-6-minutes">Micro-exercise: build a tiny “row” (6 minutes)</h2>
+<p>Create a dictionary with:</p>
+<ul>
+<li><code>"city"</code></li>
+<li><code>"temp_c"</code></li>
+<li><code>"is_weekend"</code></li>
+</ul>
+<p>Then print a sentence using an f-string.</p>
+<p><strong>Checkpoint:</strong> Your output includes all three values.</p>
+<hr>
+</section>
+<section id="solution-example" class="level2">
+<h2 class="anchored" data-anchor-id="solution-example">Solution (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> {<span class="st">"city"</span>: <span class="st">"Riyadh"</span>, <span class="st">"temp_c"</span>: <span class="fl">19.5</span>, <span class="st">"is_weekend"</span>: <span class="va">True</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"In </span><span class="sc">{</span>row[<span class="st">'city'</span>]<span class="sc">}</span><span class="ss">, temp is </span><span class="sc">{</span>row[<span class="st">'temp_c'</span>]<span class="sc">}</span><span class="ss">C. Weekend? </span><span class="sc">{</span>row[<span class="st">'is_weekend'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="session-2-recap" class="level2">
+<h2 class="anchored" data-anchor-id="session-2-recap">Session 2 recap</h2>
+<ul>
+<li>Values + containers</li>
+<li>Operators and truthiness</li>
+<li>Lists/dicts basics</li>
+</ul>
+</section>
+</section>
+<section id="maghrib-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Maghrib break</h1>
+<section id="minutes-1" class="level2">
+<h2 class="anchored" data-anchor-id="minutes-1">20 minutes</h2>
+<p><strong>When you return:</strong> we’ll start writing real scripts and reading files.</p>
+</section>
+</section>
+<section id="session-3" class="level1 page-columns page-full">
+<h1>Session 3</h1>
+<section id="control-flow-stringslistsdicts-files" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="control-flow-stringslistsdicts-files">Control flow + strings/lists/dicts + files</h2>
+<div class="muted">
+<p>5:40pm–6:40pm</p>
+</div>
+<hr>
+</section>
+<section id="session-3-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="session-3-objectives">Session 3 objectives</h2>
+<ul>
+<li>Use <code>if/elif/else</code> and conditional expressions</li>
+<li>Loop with <code>for</code> and <code>while</code></li>
+<li>Handle errors with <code>try/except</code></li>
+<li>Read and write text files with <code>with open(...)</code></li>
+<li>Use strings + lists + dicts to build a report</li>
+</ul>
+<hr>
+</section>
+<section id="if-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="if-in-practice"><code>if</code> in practice</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>grade <span class="op">=</span> <span class="dv">83</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> grade <span class="op">&gt;=</span> <span class="dv">90</span>:</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    letter <span class="op">=</span> <span class="st">"A"</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> grade <span class="op">&gt;=</span> <span class="dv">80</span>:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    letter <span class="op">=</span> <span class="st">"B"</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    letter <span class="op">=</span> <span class="st">"C or below"</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(letter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="one-line-condition-ternary" class="level2">
+<h2 class="anchored" data-anchor-id="one-line-condition-ternary">One-line condition (ternary)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>parity <span class="op">=</span> <span class="st">"even"</span> <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"odd"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(parity)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="for-loops-your-default-loop" class="level2">
+<h2 class="anchored" data-anchor-id="for-loops-your-default-loop"><code>for</code> loops: your default loop</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Aisha"</span>, <span class="st">"Fahad"</span>, <span class="st">"Noor"</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Pattern you’ll use for CSV:</strong> loop over rows, update counters.</p>
+<hr>
+</section>
+<section id="loop-helpers-range-enumerate-zip" class="level2">
+<h2 class="anchored" data-anchor-id="loop-helpers-range-enumerate-zip">Loop helpers: <code>range</code>, <code>enumerate</code>, <code>zip</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Aisha"</span>, <span class="st">"Fahad"</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(names, start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, name)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">23</span>, <span class="dv">31</span>]</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, age <span class="kw">in</span> <span class="bu">zip</span>(names, ages):</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(name, age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="while-loops-when-you-dont-know-how-many" class="level2">
+<h2 class="anchored" data-anchor-id="while-loops-when-you-dont-know-how-many"><code>while</code> loops: when you don’t know “how many”</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="common-loop-controls" class="level2">
+<h2 class="anchored" data-anchor-id="common-loop-controls">Common loop controls</h2>
+<ul>
+<li><code>continue</code> → skip to next iteration</li>
+<li><code>break</code> → stop the loop</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="st">"abcdef"</span>:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="st">"b"</span>:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="st">"e"</span>:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="quick-check-1" class="level2">
+<h2 class="anchored" data-anchor-id="quick-check-1">Quick Check</h2>
+<p>What prints?</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>. . .</p>
+<p><strong>Answer:</strong> <code>1</code> then <code>3</code></p>
+<hr>
+</section>
+<section id="match-clean-branching-python-3.10" class="level2">
+<h2 class="anchored" data-anchor-id="match-clean-branching-python-3.10"><code>match</code>: clean branching (Python 3.10+)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Command: "</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> cmd:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="st">"stats"</span>:</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Show stats"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="st">"help"</span>:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Show help"</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> _:</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Unknown command"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="assertions-enforce-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assertions-enforce-assumptions">Assertions: enforce assumptions</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">250</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> age <span class="op">&lt;=</span> <span class="dv">200</span>, <span class="st">"Age must be realistic"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use this to catch “impossible states” early.</p>
+<hr>
+</section>
+<section id="errors-happen-handle-them" class="level2">
+<h2 class="anchored" data-anchor-id="errors-happen-handle-them">Errors happen — handle them</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Enter a number: "</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="dv">1</span> <span class="op">/</span> x)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"That was not a number"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"We cannot divide by zero"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="files-always-use-with-open..." class="level2">
+<h2 class="anchored" data-anchor-id="files-always-use-with-open...">Files: always use <code>with open(...)</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"notes.txt"</span>, mode<span class="op">=</span><span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    f.write(<span class="st">"Hello file!</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"notes.txt"</span>, mode<span class="op">=</span><span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(f.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="strings-indexing-methods" class="level2">
+<h2 class="anchored" data-anchor-id="strings-indexing-methods">Strings: indexing + methods</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"  Data,Data,AI  "</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s.strip())</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s.lower())</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s.split(<span class="st">","</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="f-strings-readable-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="f-strings-readable-formatting">f-strings: readable formatting</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Noor"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="fl">91.23456</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> scored </span><span class="sc">{</span>score<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="built-ins-youll-use-in-profilers" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="built-ins-youll-use-in-profilers">Built-ins you’ll use in profilers</h2>
+<ul>
+<li><code>len(rows)</code> → row count</li>
+<li><code>min(numbers)</code>, <code>max(numbers)</code> → extremes</li>
+<li><code>sum(numbers) / len(numbers)</code> → mean</li>
+<li><code>sorted(items)</code> → ordering</li>
+<li><code>enumerate(items)</code> → index + value</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Aisha"</span>, <span class="st">"Fahad"</span>]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(names, start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>We’ll add numeric stats tomorrow.</p>
+</div></div><hr>
+</section>
+<section id="lists-dicts-the-report-builder-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="lists-dicts-the-report-builder-pattern">Lists + dicts: the report builder pattern</h2>
+<p>You will build a report like:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> {</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rows"</span>: <span class="dv">120</span>,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"columns"</span>: {</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>     <span class="st">"age"</span>: {<span class="st">"missing"</span>: <span class="dv">2</span>, <span class="st">"type"</span>: <span class="st">"number"</span>},</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>     <span class="st">"city"</span>: {<span class="st">"missing"</span>: <span class="dv">0</span>, <span class="st">"type"</span>: <span class="st">"text"</span>}</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="micro-exercise-count-missing-values-8-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="micro-exercise-count-missing-values-8-minutes">Micro-exercise: count missing values (8 minutes)</h2>
+<p>Given this list of rows:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> [</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"age"</span>: <span class="st">"19"</span>, <span class="st">"city"</span>: <span class="st">"Riyadh"</span>},</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"age"</span>: <span class="st">""</span>,   <span class="st">"city"</span>: <span class="st">"Jeddah"</span>},</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"age"</span>: <span class="st">"20"</span>, <span class="st">"city"</span>: <span class="st">""</span>},</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Write code that counts missing values <strong>per column</strong>.</p>
+<p><strong>Rule:</strong> treat empty string <code>""</code> as missing.</p>
+<hr>
+</section>
+<section id="solution-one-good-approach" class="level2">
+<h2 class="anchored" data-anchor-id="solution-one-good-approach">Solution (one good approach)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> {<span class="st">"age"</span>: <span class="dv">0</span>, <span class="st">"city"</span>: <span class="dv">0</span>}</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows:</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> missing:</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> row[col] <span class="op">==</span> <span class="st">""</span>:</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            missing[col] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(missing)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="session-3-recap" class="level2">
+<h2 class="anchored" data-anchor-id="session-3-recap">Session 3 recap</h2>
+<ul>
+<li>Control flow: if / loops / match</li>
+<li>Files: <code>with open(...)</code></li>
+<li>Report pattern: nested dicts</li>
+</ul>
+</section>
+</section>
+<section id="isha-break" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Isha break</h1>
+<section id="minutes-2" class="level2">
+<h2 class="anchored" data-anchor-id="minutes-2">20 minutes</h2>
+<p><strong>When you return:</strong> we start building the weekly project.</p>
+</section>
+</section>
+<section id="hands-on" class="level1 page-columns page-full">
+<h1>Hands-on</h1>
+<section id="build-the-project-csv-profiler-part-1" class="level2 r-fit-text">
+<h2 class="r-fit-text anchored" data-anchor-id="build-the-project-csv-profiler-part-1">Build the project: CSV Profiler (Part 1)</h2>
+<div class="muted">
+<p>7:00pm–9:00pm</p>
+</div>
+<hr>
+</section>
+<section id="hands-on-success-criteria-today" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-success-criteria-today">Hands-on success criteria (today)</h2>
+<p>By 9:00pm you should have:</p>
+<ul>
+<li>A project folder with <code>.venv/</code></li>
+<li>A Python package <code>csv_profiler/</code></li>
+<li>Code that:
+<ul>
+<li>reads a CSV</li>
+<li>computes basic profile (rows/cols, missing counts)</li>
+<li>writes <code>report.json</code> and <code>report.md</code></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="weekly-project-folder-layout-target" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="weekly-project-folder-layout-target">Weekly project folder layout (target)</h2>
+<pre class="text"><code>bootcamp/
+  csv-profiler/
+    pyproject.toml
+    README.md
+    src/
+      csv_profiler/
+        __init__.py
+        io.py
+        profile.py
+        render.py
+        cli.py
+    data/
+      sample.csv
+    outputs/
+      report.json
+      report.md</code></pre>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Today we’ll create a minimal version. We’ll improve structure during the week.</p>
+</div></div><hr>
+</section>
+<section id="task-0-create-the-project-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-0-create-the-project-10-minutes">Task 0 — Create the project (10 minutes)</h2>
+<ol type="1">
+<li>Inside <code>bootcamp/</code>, create a folder <code>csv-profiler/</code></li>
+<li><code>cd csv-profiler</code></li>
+<li>Create an env: <code>uv venv -p 3.11</code></li>
+</ol>
+<p><strong>Checkpoint:</strong> you have <code>.venv/</code> inside <code>csv-profiler/</code>.</p>
+<hr>
+</section>
+<section id="task-0-suggested-commands" class="level2">
+<h2 class="anchored" data-anchor-id="task-0-suggested-commands">Task 0 — Suggested commands</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/bootcamp</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> csv-profiler</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> csv-profiler</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> venv <span class="at">-p</span> 3.11</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-1-add-a-sample-csv-8-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-add-a-sample-csv-8-minutes">Task 1 — Add a sample CSV (8 minutes)</h2>
+<p>Create <code>data/sample.csv</code> with this content:</p>
+<pre class="csv"><code>name,age,city,salary
+Aisha,23,Riyadh,12000
+Fahad,,Jeddah,9000
+Noor,29,,
+Salem,31,Dammam,15000</code></pre>
+<p><strong>Checkpoint:</strong> you can open it in VS Code.</p>
+<hr>
+</section>
+<section id="task-2-create-package-skeleton-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-create-package-skeleton-10-minutes">Task 2 — Create package skeleton (10 minutes)</h2>
+<p>Create these files:</p>
+<ul>
+<li><code>src/csv_profiler/__init__.py</code></li>
+<li><code>src/csv_profiler/io.py</code></li>
+<li><code>src/csv_profiler/profile.py</code></li>
+<li><code>src/csv_profiler/render.py</code></li>
+<li><code>main.py</code> <em>(temporary entrypoint for today)</em></li>
+</ul>
+<hr>
+</section>
+<section id="task-2-minimal-main.py" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-minimal-main.py">Task 2 — Minimal <code>main.py</code></h2>
+<p>Paste this first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv_profiler.io <span class="im">import</span> read_csv_rows</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv_profiler.profile <span class="im">import</span> basic_profile</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv_profiler.render <span class="im">import</span> write_json, write_markdown</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main() <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> read_csv_rows(<span class="st">"data/sample.csv"</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> basic_profile(rows)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    write_json(report, <span class="st">"outputs/report.json"</span>)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    write_markdown(report, <span class="st">"outputs/report.md"</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Wrote outputs/report.json and outputs/report.md"</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-3-implement-csv-reading-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-implement-csv-reading-15-minutes">Task 3 — Implement CSV reading (15 minutes)</h2>
+<p>In <code>src/csv_profiler/io.py</code> implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv <span class="im">import</span> DictReader</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_csv_rows(path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]:</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Read a CSV as a list of rows (each row is a dict of strings)."""</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Rules:</p>
+<ul>
+<li>Use <code>with open(..., newline="")</code></li>
+<li>Return <code>list[dict[str, str]]</code></li>
+</ul>
+<hr>
+</section>
+<section id="solution-read_csv_rows-example" class="level2">
+<h2 class="anchored" data-anchor-id="solution-read_csv_rows-example">Solution — <code>read_csv_rows</code> (example)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> csv <span class="im">import</span> DictReader</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_csv_rows(path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]:</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> path.<span class="bu">open</span>(<span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>, newline<span class="op">=</span><span class="st">""</span>) <span class="im">as</span> f:</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        reader <span class="op">=</span> DictReader(f)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="bu">dict</span>(row) <span class="cf">for</span> row <span class="kw">in</span> reader]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-4-compute-a-basic-profile-20-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-compute-a-basic-profile-20-minutes">Task 4 — Compute a basic profile (20 minutes)</h2>
+<p>In <code>src/csv_profiler/profile.py</code>, implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> basic_profile(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute row count, column names, and missing values per column."""</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Definition of <strong>missing</strong> today:</p>
+<ul>
+<li>empty string after stripping whitespace</li>
+</ul>
+<hr>
+</section>
+<section id="hint-how-to-get-columns" class="level2">
+<h2 class="anchored" data-anchor-id="hint-how-to-get-columns">Hint — how to get columns</h2>
+<p>If there is at least one row:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> <span class="bu">list</span>(rows[<span class="dv">0</span>].keys())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then loop rows and update counts.</p>
+<hr>
+</section>
+<section id="solution-basic_profile-day-1-version" class="level2">
+<h2 class="anchored" data-anchor-id="solution-basic_profile-day-1-version">Solution — <code>basic_profile</code> (day-1 version)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> basic_profile(rows: <span class="bu">list</span>[<span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">str</span>]]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> rows:</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">"rows"</span>: <span class="dv">0</span>, <span class="st">"columns"</span>: {}, <span class="st">"notes"</span>: [<span class="st">"Empty dataset"</span>]}</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    columns <span class="op">=</span> <span class="bu">list</span>(rows[<span class="dv">0</span>].keys())</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> {c: <span class="dv">0</span> <span class="cf">for</span> c <span class="kw">in</span> columns}</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    non_empty <span class="op">=</span> {c: <span class="dv">0</span> <span class="cf">for</span> c <span class="kw">in</span> columns}</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> rows:</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> columns:</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>            v <span class="op">=</span> (row.get(c) <span class="kw">or</span> <span class="st">""</span>).strip()</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> v <span class="op">==</span> <span class="st">""</span>:</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>                missing[c] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>                non_empty[c] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"rows"</span>: <span class="bu">len</span>(rows),</span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_cols"</span>: <span class="bu">len</span>(columns),</span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"columns"</span>: columns,</span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"missing"</span>: missing,</span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"non_empty"</span>: non_empty,</span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="optional-stretch-start-type-inference" class="level2">
+<h2 class="anchored" data-anchor-id="optional-stretch-start-type-inference">Optional (stretch): start type inference</h2>
+<p>Goal: infer a simple type label per column:</p>
+<ul>
+<li><code>number</code> if all non-empty values can be parsed as float</li>
+<li><code>text</code> otherwise</li>
+</ul>
+<p>Pseudo-steps:</p>
+<ol type="1">
+<li>For each column, collect its non-empty strings</li>
+<li>Try <code>float(value)</code> in a <code>try/except ValueError</code></li>
+<li>If any value fails → <code>text</code></li>
+</ol>
+<p>Example helper:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_number(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">float</span>(s)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-5-write-json-output-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-5-write-json-output-10-minutes">Task 5 — Write JSON output (10 minutes)</h2>
+<p>In <code>src/csv_profiler/render.py</code> implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_json(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Requirements:</p>
+<ul>
+<li>Create the parent folder if it doesn’t exist</li>
+<li>Pretty-print with indentation</li>
+</ul>
+<hr>
+</section>
+<section id="solution-write_json" class="level2">
+<h2 class="anchored" data-anchor-id="solution-write_json">Solution — <code>write_json</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_json(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    path.write_text(json.dumps(report, indent<span class="op">=</span><span class="dv">2</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-6-write-markdown-output-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-6-write-markdown-output-15-minutes">Task 6 — Write Markdown output (15 minutes)</h2>
+<p>Implement:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_markdown(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Markdown should include:</p>
+<ul>
+<li>Title</li>
+<li>Rows + columns</li>
+<li>A small table: column name + missing count</li>
+</ul>
+<hr>
+</section>
+<section id="solution-write_markdown-simple" class="level2">
+<h2 class="anchored" data-anchor-id="solution-write_markdown-simple">Solution — <code>write_markdown</code> (simple)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> __future__ <span class="im">import</span> annotations</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> write_markdown(report: <span class="bu">dict</span>, path: <span class="bu">str</span> <span class="op">|</span> Path) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> Path(path)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    cols <span class="op">=</span> report.get(<span class="st">"columns"</span>, [])</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    missing <span class="op">=</span> report.get(<span class="st">"missing"</span>, {})</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    lines: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> []</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"# CSV Profiling Report</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="ss">f"- Rows: **</span><span class="sc">{</span>report<span class="sc">.</span>get(<span class="st">'rows'</span>, <span class="dv">0</span>)<span class="sc">}</span><span class="ss">**"</span>)</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="ss">f"- Columns: **</span><span class="sc">{</span>report<span class="sc">.</span>get(<span class="st">'n_cols'</span>, <span class="dv">0</span>)<span class="sc">}</span><span class="ss">**</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"## Missing Values</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"| column | missing |"</span>)</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    lines.append(<span class="st">"|---|---:|"</span>)</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> cols:</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>        lines.append(<span class="ss">f"| </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>missing<span class="sc">.</span>get(c, <span class="dv">0</span>)<span class="sc">}</span><span class="ss"> |"</span>)</span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    path.write_text(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(lines) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="task-7-run-it-end-to-end-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="task-7-run-it-end-to-end-10-minutes">Task 7 — Run it end-to-end (10 minutes)</h2>
+<p>From the project root:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then open:</p>
+<ul>
+<li><code>outputs/report.json</code></li>
+<li><code>outputs/report.md</code></li>
+</ul>
+<p><strong>Checkpoint:</strong> both files exist and match the sample CSV.</p>
+<hr>
+</section>
+<section id="debug-playbook-when-it-fails" class="level2">
+<h2 class="anchored" data-anchor-id="debug-playbook-when-it-fails">Debug playbook (when it fails)</h2>
+<ol type="1">
+<li>Read the <strong>first error line</strong> (most important)</li>
+<li>Confirm the file path is correct</li>
+<li>Print intermediate values (<code>print(rows[0])</code>)</li>
+<li>Reduce the problem (try 1 row)</li>
+</ol>
+<hr>
+</section>
+<section id="stretch-if-you-finish-early" class="level2">
+<h2 class="anchored" data-anchor-id="stretch-if-you-finish-early">Stretch (if you finish early)</h2>
+<p>Add one more section to the Markdown:</p>
+<ul>
+<li><strong>Non-empty counts</strong> per column</li>
+</ul>
+<p>Bonus:</p>
+<ul>
+<li>A <code>top_values</code> list for text columns (most common values)</li>
+</ul>
+<hr>
+</section>
+<section id="exit-ticket" class="level2">
+<h2 class="anchored" data-anchor-id="exit-ticket">Exit Ticket</h2>
+<p>In 1–2 sentences:</p>
+<p><strong>What was the most confusing part today: paths, environments, or Python control flow?</strong></p>
+<hr>
+</section>
+<section id="what-to-do-after-class-day-1-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-do-after-class-day-1-assignment">What to do after class (Day 1 assignment)</h2>
+<p><strong>Due:</strong> before Day 2 starts</p>
+<ol type="1">
+<li>Make your code work on <code>data/sample.csv</code></li>
+<li>Change the sample CSV (add 2 rows) and rerun</li>
+<li>Update <code>report.md</code> to include a short “Notes” section</li>
+</ol>
+<p><strong>Deliverable:</strong> a zip or folder with your <code>csv-profiler/</code> project.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tomorrow we’ll refactor into functions + modules and add better type inference.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="thank-you" class="level1" data-background-image="false" data-background-opacity="0.1">
+<h1 data-background-image="false" data-background-opacity="0.1">Thank You!</h1>
+<div style="width: 300px">
+
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
