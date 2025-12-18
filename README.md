@@ -10,7 +10,7 @@ Generate a profiling report for a CSV file.
 
 ## Run CLI
   - If you have a src/ folder:
-  - Go to the src file and the write this command in the powershell
+  - Go to the src file and run this command in the powershell : 
   -uv run python -m csv_profiler.cli ../data/sample.csv
 
 ## Run GUI
